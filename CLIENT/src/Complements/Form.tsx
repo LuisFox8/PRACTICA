@@ -2,12 +2,12 @@ import { useState } from "react";
 import { Dispatch } from "react";
 import { ActivityActions, ActivityState } from "../reducers/activity-reducers";
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 type FormProps = {
   dispatch: Dispatch<ActivityActions>;
   state: ActivityState; // Ajusta el tipo del estado
 };
-
-const API_BASE_URL = "http://localhost:3000"; // Updated with the correct Render domain
 
 function Form({ dispatch }: FormProps) {
   const [nombre, setNombre] = useState("");
@@ -52,7 +52,7 @@ function Form({ dispatch }: FormProps) {
     };
 
     try {
-      const response = await fetch(`${API_BASE_URL}/api/clients/save`, {
+      const response = await fetch(`${apiUrl}/api/clients/save`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
