@@ -3,7 +3,7 @@ export type Activity = {
   category: number;
   name: string;
   calorias: number;
-  service: string; // Tipo de servicio
+  service: string; 
   client: string;
   plates?: string; // Opcional para servicios distintos de estacionamiento
   startTime?: number; // Tiempo de inicio para estacionamiento
